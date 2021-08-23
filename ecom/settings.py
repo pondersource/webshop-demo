@@ -22,8 +22,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.sites',
 
-    'webshop'
+    # Application apps
+    'webshop',
+    'main',
+
 ]
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -36,8 +40,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'ecom.urls'
-
-SITE_ID = 1
 
 TEMPLATES = [
     {

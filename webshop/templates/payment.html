@@ -1,0 +1,22 @@
+{% block content %}
+
+<h1> Send invoice through </h1>
+
+<form method="post">
+
+  <label for="send">Send invoice through :</label>
+
+  <select name="send" id="send">
+    <option value="peppolID">Peppol ID</option>
+    <option value="webID">Web ID</option>
+    <option value="email">Email</option>
+  </select>
+
+    {% csrf_token %}
+    {{ form.as_p}}
+    <button class="btn btn-success">Send</button>
+
+</form>
+
+
+{% endblock content %}
