@@ -6,18 +6,13 @@ def payment(request, template_name='payment.html'):
 
     ctx = {}
     if request.method == 'POST':
-        # create a form instance and populate it with data from the request:
         form = paymentForm(request.POST)
-        # check whether it's valid:
+
         if form.is_valid():
-            email = form.cleaned_data['email']
-            webID = form.cleaned_data['webID']
-            peppolID = form.cleaned_data['peppolID']
-            # ...
-            # redirect to a new URL:
+            address = form.cleaned_data['address']
+            via = form.cleaned_data['via']
             return HttpResponseRedirect('/thanks/')
 
-    # if a GET (or any other method) we'll create a blank form
     else:
         form = paymentForm()
 
