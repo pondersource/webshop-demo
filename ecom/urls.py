@@ -1,10 +1,14 @@
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
+from django.urls import path , include
+from main.views import IndexPageView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', view=IndexPageView, name='index'),
+    path('webshop/', include('webshop.urls') , name = 'webshop'),
+
 ]
 
 if settings.DEBUG:
