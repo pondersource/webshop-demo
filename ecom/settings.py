@@ -7,7 +7,6 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-DISABLE_COLLECTSTATIC=1
 
 INSTALLED_APPS = [
     'django.contrib.admin',
