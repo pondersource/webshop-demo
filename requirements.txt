@@ -1,5 +1,4 @@
 appdirs==1.4.4
-asgiref==3.4.1
 attrs==21.2.0
 beautifulsoup4==4.9.3
 bootstrap4==0.1.0
