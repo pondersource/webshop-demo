@@ -1,4 +1,5 @@
 import os
+import django_heroku
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'your key'
@@ -110,3 +111,6 @@ if DEBUG is False:
             'PORT': ''
         }
     }
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
