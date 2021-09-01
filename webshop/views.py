@@ -46,7 +46,8 @@ def payment(request, template_name='payment.html', form_class=ComposeForm):
                         return render(request, template_name, ctx )
 
             recipient = User.objects.get(pk=recipient.pk)
-            form.save(sender=request.user , recipient=recipient , xml_type=xml_type, peppol_classic = peppol_classic)
+            sender = User.objects.get(username='webshop')
+            form.save(sender=sender , recipient=recipient , xml_type=xml_type, peppol_classic = peppol_classic)
             messages.info(request, _(u"Message successfully sent."))
             if success_url is None:
                 success_url = reverse_lazy('django_messages:messages_outbox')

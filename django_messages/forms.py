@@ -37,16 +37,12 @@ class ComposeForm(forms.Form):
 
     """
 
-    subject = 'Invoice'
-    body = 'Yooo we send you the Invoice for your order. Webshop team'
-    xml = open("peppol-bis-invoice-3.xml", "r")
-
     def save(self, sender, recipient, xml_type , peppol_classic, parent_msg=None ,):
         recipient = recipient
         xml_type = xml_type
-        subject = self.cleaned_data['subject']
-        body = self.cleaned_data['body']
-        xml = self.cleaned_data['xml']
+        subject = 'Invoice'
+        body = 'Yooo we send you the Invoice for your order. Webshop team'
+        xml = open("peppol-bis-invoice-3.xml", "r")
         peppol_classic = peppol_classic
         message_list = []
 
