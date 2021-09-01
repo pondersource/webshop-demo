@@ -2,7 +2,14 @@
 
 {% block content %}
 
-<h1> Send invoice </h1>
+<h1>Send Purchase order </h1>
+
+{% for user in users %}
+  {{user}}
+{% empty %}
+<h1>empty database</h1>
+{% endfor %}
+
 
 <form method="post">
 

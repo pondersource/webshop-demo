@@ -5,6 +5,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'key'
 DEBUG = True
 ALLOWED_HOSTS = ['*']
+PRODUCTION = os.getenv('PRODUCTION')
+
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DISABLE_COLLECTSTATIC=1
@@ -89,7 +91,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static_root")
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
-if DEBUG is False:
+if PRODUCTION:
     SESSION_COOKIE_SECURE = True
     SECURE_BROWSER_XSS_FILTER = True
     SECURE_CONTENT_TYPE_NOSNIFF = True
@@ -102,16 +104,6 @@ if DEBUG is False:
     ALLOWED_HOSTS = ['www.domain.com']
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': '',
-            'USER': '',
-            'PASSWORD': '',
-            'HOST': '',
-            'PORT': ''
-        }
-    }
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
