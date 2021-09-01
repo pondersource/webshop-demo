@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from .forms import paymentForm
+from django.contrib.auth.models import User
+from peppol_python_demo.accounts.models import Activation
 
 def payment(request, template_name='payment.html'):
 
@@ -52,10 +54,6 @@ def payment(request, template_name='payment.html'):
                     success_url = request.GET['next']
 
                 return HttpResponseRedirect(success_url)
-
-
-
-
     else:
         form = paymentForm()
 
