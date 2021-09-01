@@ -6,6 +6,7 @@ from accounts.models import Activation
 from django import forms
 from django_messages.forms import ComposeForm
 from django.contrib import messages
+from django.utils.translation import gettext as _
 
 
 def payment(request, template_name='payment.html', form_class=ComposeForm):
