@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from .forms import paymentForm
 from django.contrib.auth.models import User
-from .home.roze.Documents.Ponder-Source.demo.peppol-python-demo.accounts.models import Activation
+from .models import Activation
 
 def payment(request, template_name='payment.html'):
 
