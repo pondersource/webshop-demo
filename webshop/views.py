@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from .forms import paymentForm
 from django.contrib.auth.models import User
-from .models import Activation
+from accounts.models import Activation
 
 def payment(request, template_name='payment.html'):
 
@@ -10,7 +10,6 @@ def payment(request, template_name='payment.html'):
 
     if request.method == 'POST':
         form = paymentForm(request.POST)
-
 
         sender = User.objects.get(username='webshop')
         recipient_UWP = form.cleaned_data['address']

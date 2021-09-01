@@ -8,6 +8,7 @@ ALLOWED_HOSTS = ['*']
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DISABLE_COLLECTSTATIC=1
+DATABASE_URL = os.environ.get('DATABASE_URL')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -21,6 +22,9 @@ INSTALLED_APPS = [
     # Application apps
     'webshop',
     'main',
+    'django_messages',
+    'accounts',
+    'connection',
 
 ]
 SITE_ID = 1
