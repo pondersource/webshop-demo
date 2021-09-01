@@ -2,13 +2,7 @@
 
 {% block content %}
 
-<h1> Send invoice </h1>
-
-{% for user in users %}
-  {{user}}
-{% empty %}
-  <h1>empty database</h1>
-{% endfor %}
+<h1> Ask for invoice </h1>
 
 <form method="post">
 
@@ -23,8 +17,8 @@
   <label for="via"> Through:</label>
 
   <select name="via" id="via">
-    <option value="webID">AS4 Direct</option>
-    <option value="email">Peppol</option>
+    <option value="AS4">AS4 Direct</option>
+    <option value="peppol">Peppol</option>
   </select>
 
     {% csrf_token %}
