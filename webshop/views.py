@@ -3,6 +3,7 @@ from django.http import HttpResponseRedirect
 from .forms import paymentForm
 from django.contrib.auth.models import User
 from accounts.models import Activation
+from django import forms
 
 def payment(request, template_name='payment.html'):
 
@@ -13,7 +14,7 @@ def payment(request, template_name='payment.html'):
         if form_payment.is_valid():
             recipient_UWP = form_payment.cleaned_data['address']
 
-        form = form = form_class(request.POST, request.FILES)
+        form = form_class(request.POST, request.FILES)
         if form.is_valid():
             sender = User.objects.get(username='webshop')
 
