@@ -15,7 +15,7 @@ def payment(request, template_name='payment.html'):
 
         xml_type = 'invoice'
 
-        via = form.cleaned_data['via']
+        via = request.POST['via']
         if via=='AS4':
             peppol_classic = False
         else:
