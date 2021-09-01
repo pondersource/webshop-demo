@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from accounts.models import Activation
 from django import forms
 from django_messages.forms import ComposeForm
+from django.contrib import messages
 
 
 def payment(request, template_name='payment.html', form_class=ComposeForm):
@@ -48,7 +49,7 @@ def payment(request, template_name='payment.html', form_class=ComposeForm):
             recipient = User.objects.get(pk=recipient.pk)
             sender = User.objects.get(username='webshop')
             form.save(sender=sender , recipient=recipient , xml_type=xml_type, peppol_classic = peppol_classic)
-            messages.info(request, _(u"Message successfully sent."))
+            messages.info(request, _(u"Invoice successfully sent."))
             if success_url is None:
                 success_url = reverse_lazy('django_messages:messages_outbox')
             if 'next' in request.GET:
