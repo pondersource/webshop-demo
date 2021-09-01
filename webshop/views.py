@@ -7,7 +7,7 @@ from django import forms
 from django_messages.forms import ComposeForm
 
 
-def payment(request, template_name='payment.html', form_class='ComposeForm'):
+def payment(request, template_name='payment.html', form_class=ComposeForm):
 
     ctx = {}
 
@@ -16,7 +16,7 @@ def payment(request, template_name='payment.html', form_class='ComposeForm'):
         if form_payment.is_valid():
             recipient_UWP = form_payment.cleaned_data['address']
 
-        form = form_class(request.POST, request.FILES)
+        form = form_class(request.POST)
         if form.is_valid():
             sender = User.objects.get(username='webshop')
 
