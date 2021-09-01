@@ -51,12 +51,7 @@ def payment(request, template_name='payment.html', form_class=ComposeForm):
             sender = User.objects.get(username='webshop')
             form.save(sender=sender , recipient=recipient , xml_type=xml_type, peppol_classic = peppol_classic)
             messages.info(request, _(u"Invoice successfully sent."))
-            if success_url is None:
-                success_url = reverse_lazy('django_messages:messages_outbox')
-            if 'next' in request.GET:
-                success_url = request.GET['next']
-
-            return HttpResponseRedirect(success_url)
+            return HttpResponseRedirect('/thanks/')
     else:
         form = paymentForm()
 

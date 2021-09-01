@@ -3,7 +3,9 @@
 {% block content %}
 
 <h1> Ask for invoice </h1>
-
+{% for m in messages %}
+  {{m}}
+{% endfor %}
 <form method="post">
 
   <label for="via"> Through:</label>
