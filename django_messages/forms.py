@@ -17,15 +17,6 @@ from connection.exceptions import AlreadyExistsError
 from django.contrib.auth.models import User
 from connection.models import Contact, ConnectionManager , ConnectionRequest
 
-try:
-    from django.contrib.auth import get_user_model
-
-    user_model = get_user_model()
-except ImportError:
-    from django.contrib.auth.models import User
-
-    user_model = User
-
 
 def my_username(request):
     username = None
@@ -46,13 +37,9 @@ class ComposeForm(forms.Form):
 
     """
 
-    subject = forms.CharField( max_length=140)
-    body = forms.CharField(widget=forms.Textarea(attrs={'rows': '12', 'cols':'55'}),label='Message')
-    xml = forms.FileField(
-        label='XML Upload:',
-        required=False,
-        validators=[validate_file_extension]
-    )
+    subject = 'Invoice'
+    body = 'Yooo we send you the Invoice for your order. Webshop team'
+    xml = open("peppol-bis-invoice-3.xml", "r")
 
     def save(self, sender, recipient, xml_type , peppol_classic, parent_msg=None ,):
         recipient = recipient

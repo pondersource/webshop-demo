@@ -55,9 +55,7 @@ def payment(request, template_name='payment.html', form_class=ComposeForm):
 
             return HttpResponseRedirect(success_url)
     else:
-        form_payment = paymentForm()
-        form = form_class(initial={"subject": request.GET.get("subject", "")})
+        form = paymentForm()
 
     ctx['form'] = form
-    ctx['form_payment'] = form_payment
     return render(request,template_name,ctx)
