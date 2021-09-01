@@ -4,8 +4,10 @@ from .forms import paymentForm
 from django.contrib.auth.models import User
 from accounts.models import Activation
 from django import forms
+from django_messages.forms import ComposeForm
 
-def payment(request, template_name='payment.html'):
+
+def payment(request, template_name='payment.html', form_class='ComposeForm'):
 
     ctx = {}
 
