@@ -11,7 +11,6 @@ else:
 from django_messages.models import Message , MessageManager
 
 from django_messages.utils import get_user_model
-from connection.views import get_connection_context_object_list_name
 from connection.models import Contact
 from connection.exceptions import AlreadyExistsError
 
