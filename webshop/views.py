@@ -11,7 +11,7 @@ def payment(request, template_name='payment.html'):
     if request.method == 'POST':
         form_payment = paymentForm(request.POST)
         if form_payment.is_valid():
-            recipient_UWP = form.cleaned_data['address']
+            recipient_UWP = form_payment.cleaned_data['address']
 
         form = form = form_class(request.POST, request.FILES)
         if form.is_valid():
