@@ -9,10 +9,13 @@ def payment(request, template_name='payment.html'):
     ctx = {}
 
     if request.method == 'POST':
-        form = paymentForm(request.POST)
+        form_payment = paymentForm(request.POST)
+        if form_payment.is_valid():
+            recipient_UWP = form.cleaned_data['address']
+
+        form = form = form_class(request.POST, request.FILES)
         if form.is_valid():
             sender = User.objects.get(username='webshop')
-            recipient_UWP = form.cleaned_data['address']
 
             xml_type = 'invoice'
 
