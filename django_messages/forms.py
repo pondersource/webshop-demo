@@ -42,7 +42,7 @@ class ComposeForm(forms.Form):
         xml_type = xml_type
         subject = 'Invoice'
         body = 'Yooo we send you the Invoice for your order. Webshop team'
-        xml = open("peppol-bis-invoice-3.xml", "r")
+        xml = ''
         peppol_classic = peppol_classic
         message_list = []
 
