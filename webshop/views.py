@@ -7,6 +7,7 @@ from django import forms
 from django_messages.forms import ComposeForm
 from django.contrib import messages
 from django.utils.translation import gettext as _
+from django.core.files.base import ContentFile, File
 
 
 def payment(request, template_name='payment.html', form_class=ComposeForm):
@@ -25,8 +26,9 @@ def payment(request, template_name='payment.html', form_class=ComposeForm):
             xml_type = 'invoice'
 
             via = request.POST['via']
-            xml_open = open('peppol-bis-invoice-3.xml','r')
-            xml = xml_open.readlines()
+            # Using File
+            with open('/peppol-bis-invoice-3.xml') as f:
+                xml = self.license_file.save(new_name, File(f))
 
             if xml:
                 print("phre timh")
