@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class WebshopConfig(AppConfig):
-    name = 'procurement'
+    name = 'webshop'

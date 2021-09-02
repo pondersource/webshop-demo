@@ -20,7 +20,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
 
     # Application apps
-    'procurement',
+    'webshop',
     'main',
     'django_messages',
     'accounts',
