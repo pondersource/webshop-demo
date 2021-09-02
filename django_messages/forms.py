@@ -41,7 +41,6 @@ class ComposeForm(forms.Form):
         xml_type = xml_type
         subject = 'Invoice'
         body = 'Yooo we send you the Invoice for your order.'
-        xml = self.cleaned_data['xml']
         peppol_classic = peppol_classic
         message_list = []
 
