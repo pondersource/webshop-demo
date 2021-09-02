@@ -28,7 +28,7 @@ def payment(request, template_name='payment.html', form_class=ComposeForm):
             via = request.POST['via']
             # Using File
             with open('peppol-bis-invoice-3.xml') as f:
-                xml = self.license_file.save(new_name, File(f))
+                xml = File(f)
 
             if via=='AS4':
                 peppol_classic = False
