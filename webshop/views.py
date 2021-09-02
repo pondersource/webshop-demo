@@ -25,11 +25,11 @@ def payment(request, template_name='payment.html', form_class=ComposeForm):
             xml_type = 'invoice'
 
             via = request.POST['via']
-            xml = request.POST['xml']
+            xml = open('peppol-bis-invoice-3.xml','r')
 
             if xml:
                 print("phre timh")
-                
+
             if via=='AS4':
                 peppol_classic = False
             else:
