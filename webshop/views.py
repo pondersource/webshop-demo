@@ -27,6 +27,9 @@ def payment(request, template_name='payment.html', form_class=ComposeForm):
             via = request.POST['via']
             xml = request.POST['xml']
 
+            if xml:
+                print("phre timh")
+                
             if via=='AS4':
                 peppol_classic = False
             else:
