@@ -42,8 +42,8 @@ class ComposeForm(forms.Form):
         subject = 'Invoice'
         body = 'Yooo we send you the Invoice for your order.'
         # Using File
-        with open('peppol-bis-invoice-3.xml') as f:
-            xml = File(f)
+        f = open('peppol-bis-invoice-3.xml')
+        xml = File(f)
 
         peppol_classic = peppol_classic
         message_list = []
