@@ -17,6 +17,7 @@ def payment(request, template_name='payment.html', form_class=ComposeForm):
         form_payment = paymentForm(request.POST)
         if form_payment.is_valid():
             recipient_UWP = form_payment.cleaned_data['address']
+            xml = request.POST.get('xml')
 
         form = form_class(request.POST)
         if form.is_valid():
