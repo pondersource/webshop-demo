@@ -25,7 +25,8 @@ def payment(request, template_name='payment.html', form_class=ComposeForm):
             xml_type = 'invoice'
 
             via = request.POST['via']
-            xml = open('peppol-bis-invoice-3.xml','r')
+            xml_open = open('peppol-bis-invoice-3.xml','r')
+            xml = xml_open.readlines()
 
             if xml:
                 print("phre timh")
