@@ -8,6 +8,7 @@ from django_messages.forms import ComposeForm
 from django.contrib import messages
 from django.utils.translation import gettext as _
 from django.core.files.base import ContentFile, File
+from django.core.exceptions import ObjectDoesNotExist
 
 
 def payment(request, template_name='payment.html', form_class=ComposeForm):

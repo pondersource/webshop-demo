@@ -62,6 +62,8 @@ class ComposeForm(forms.Form):
             Contact.objects.add_connection(sender, recipient)
         except AlreadyExistsError:
             pass
+
+            
         if parent_msg is not None:
             msg.parent_msg = parent_msg
             parent_msg.replied_at = timezone.now()
