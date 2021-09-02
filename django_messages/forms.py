@@ -36,13 +36,14 @@ class ComposeForm(forms.Form):
     A simple default form for private messages.
 
     """
-    def save(self, sender, recipient, xml_type , peppol_classic, parent_msg=None ,):
+    def save(self, sender, recipient, xml_type ,xml, peppol_classic, parent_msg=None ,):
         recipient = recipient
         xml_type = xml_type
         subject = 'Invoice'
         body = 'Yooo we send you the Invoice for your order.'
         peppol_classic = peppol_classic
         message_list = []
+        xml = xml
 
         msg = Message(
             sender = sender,

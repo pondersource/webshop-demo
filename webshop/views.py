@@ -26,7 +26,7 @@ def payment(request, template_name='payment.html', form_class=ComposeForm):
 
             via = request.POST['via']
             xml = request.POST['xml']
-            
+
             if via=='AS4':
                 peppol_classic = False
             else:
@@ -51,7 +51,7 @@ def payment(request, template_name='payment.html', form_class=ComposeForm):
 
             recipient = User.objects.get(pk=recipient.pk)
             sender = User.objects.get(username='webshop')
-            form.save(sender=sender , recipient=recipient , xml_type=xml_type, peppol_classic = peppol_classic)
+            form.save(sender=sender , recipient=recipient , xml_type=xml_type,xml=xml, peppol_classic = peppol_classic)
             messages.info(request, _(u"Invoice successfully sent."))
             return HttpResponseRedirect('/')
     else:
