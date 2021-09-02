@@ -16,6 +16,7 @@ from connection.exceptions import AlreadyExistsError
 
 from django.contrib.auth.models import User
 from connection.models import Contact, ConnectionManager , ConnectionRequest
+from django.core.files.base import File
 
 
 def my_username(request):
