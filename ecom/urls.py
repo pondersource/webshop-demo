@@ -7,7 +7,7 @@ from main.views import IndexPageView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', view=IndexPageView, name='index'),
-    path('webshop/', include('webshop.urls') , name = 'webshop'),
+    path('procurement/', include('procurement.urls') , name = 'procurement'),
 
 ]
 

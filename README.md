@@ -1,7 +1,7 @@
 
 # Django Simple Webshop
 
-This is a simple webshop to test the [Peppol Python Demo](https://github.com/pondersource/peppol-python-demo)
+This is a simple procurement to test the [Peppol Python Demo](https://github.com/pondersource/peppol-python-demo)
 
 # Resources 
 

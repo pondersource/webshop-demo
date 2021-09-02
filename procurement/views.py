@@ -22,7 +22,7 @@ def payment(request, template_name='payment.html', form_class=ComposeForm):
 
         form = form_class(request.POST)
         if form.is_valid():
-            sender = User.objects.get(username='webshop')
+            sender = User.objects.get(username='procurement')
 
             xml_type = 'invoice'
 
@@ -51,7 +51,7 @@ def payment(request, template_name='payment.html', form_class=ComposeForm):
                         return render(request, template_name, ctx )
 
             recipient = User.objects.get(pk=recipient.pk)
-            sender = User.objects.get(username='webshop')
+            sender = User.objects.get(username='procurement')
             form.save(sender=sender , recipient=recipient , xml_type=xml_type, peppol_classic = peppol_classic)
             messages.info(request, _(u"Invoice successfully sent."))
             return HttpResponseRedirect('/')
