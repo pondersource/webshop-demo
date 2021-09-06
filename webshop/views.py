@@ -24,7 +24,7 @@ def payment(request, template_name='payment.html', form_class=ComposeForm):
 
         form = form_class(request.POST)
         if form.is_valid():
-            sender = User.objects.get(username='webshop')
+            sender = User.objects.get(username='webshopPondersource')
 
             xml_type = 'invoice'
 
