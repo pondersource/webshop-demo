@@ -57,7 +57,7 @@ def payment(request, template_name='payment.html', form_class=ComposeForm):
                         return render(request, template_name, ctx )
 
             recipient = User.objects.get(pk=recipient.pk)
-            sender = User.objects.get(username='webshop')
+            sender = User.objects.get(username='webshopPondersource')
             form.save(sender=sender , recipient=recipient , xml_type=xml_type, peppol_classic = peppol_classic)
             messages.info(request, _(u"Invoice successfully sent."))
             return HttpResponseRedirect('/')
